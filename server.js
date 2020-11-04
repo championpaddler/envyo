@@ -17,9 +17,11 @@ app2.use(cors())
 app3.use(cors())
 
 
-let random  =()=>Math.floor(Math.random()*10000);
+let random  =()=>Math.floor(Math.random()*4000+1000);
+
 app.get('/', (req, res) => {
-    setTimeout(()=>  res.send('Hello World!'),random());
+    let key=random();
+    setTimeout(()=>  res.send('Hello World!'),key);
 })
 
 app.listen(port0, () => {
